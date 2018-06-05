@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+.navbar-text {
+    border-left: 1px solid #ddd;
+    margin-left: 20px;
+    padding-left: 20px;
+}

@@ -1,4 +1,13 @@
 Blog::Application.routes.draw do
+  get "sign_up" => "users#new", :as => 'sign_up'
+  get "sign_in" => "sessions#new", :as => 'sign_in'
+  get "sign_out" => "sessions#destroy", :as => 'sign_out'
+
+  resource :users
+  resource :sessions
+
+  root :to => 'users#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
