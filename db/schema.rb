@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(:version => 20180605193116) do
     t.text     "body"
     t.integer  "user_id"
     t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "views"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "views",       :default => 0
   end
 
   add_index "posts", ["category_id"], :name => "index_posts_on_category_id"
