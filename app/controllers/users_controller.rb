@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'sidebar'
+
   def new
     @user = User.new
   end

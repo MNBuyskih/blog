@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout 'sidebar'
+
   def new
   end
 
