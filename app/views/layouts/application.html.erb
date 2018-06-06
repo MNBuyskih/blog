@@ -41,15 +41,15 @@
       </div>
       <!-- Navbar Menu -->
       <div id="navbarcollapse" class="collapse navbar-collapse">
-        <div class="navbar-text ml-auto">
+        <ul class="navbar-nav ml-auto">
           <% if current_user %>
-            Hello, <%= current_user.name %>!
-            <%= link_to 'Sight Out', sign_out_path %>
+            <li class="nav-item"><%= link_to 'New post', {:controller => 'posts', :action => 'new'}, class: 'nav-link'  %></li>
+            <li class="nav-item"><%= link_to 'Sign Out', sign_out_path, class: 'nav-link' %></li>
           <% else %>
-            <%= link_to 'Sign In', sign_in_path %>
-            <%= link_to 'Sign Up', sign_up_path %>
+            <li class="nav-item"><%= link_to 'Sign In', sign_in_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Sign Up', sign_up_path, class: 'nav-link' %></li>
           <% end %>
-        </div>
+        </ul>
       </div>
     </div>
   </nav>
