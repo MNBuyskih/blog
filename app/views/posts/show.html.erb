@@ -13,10 +13,10 @@
       <%= render 'info', :post => @post %>
     </div>
     <div class="post-body">
-      <p class="lead"><%= @post.lead %></p>
+      <p class="lead"><%= raw(@post.lead) %></p>
 
       <div class="post-content">
-        <%= @post.body %>
+        <%= raw(@post.body) %>
       </div>
     </div>
     <div class="post-tags">

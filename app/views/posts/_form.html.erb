@@ -2,9 +2,7 @@
 
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="alert">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+    <div class="alert alert-danger">
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>

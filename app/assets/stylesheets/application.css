@@ -19,3 +19,15 @@
 
     text-shadow: 1px 1px 8px #000;
 }
+
+blockquote{
+    font-size: 1.05em;
+    line-height: 1.7em;
+    border-color: #999;
+    border: 1px solid #eee;
+    border-left: 6px solid #eee;
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 30px;
+}
