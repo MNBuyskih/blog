@@ -17,3 +17,33 @@ section.featured-posts .image {
   max-width: 100%;
   height: auto;
 }
+
+section.featured-posts,
+.post {
+  .title {
+    &:after {
+      display: none;
+    }
+  }
+
+  .date,
+  .edit,
+  .delete,
+  .views,
+  .comments {
+    font-size: 12.8px;
+    font-weight: 400;
+    color: #999;
+
+    &:after {
+      display: none;
+    }
+    &:before {
+      content: '|';
+      display: inline-block;
+      margin: 0 7px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  }
+}
