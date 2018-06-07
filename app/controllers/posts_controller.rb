@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.filter(params)
 
     respond_to do |format|
       format.html { render layout: 'application' } # index.html.erb

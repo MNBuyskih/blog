@@ -4,6 +4,7 @@ Blog::Application.routes.draw do
   get "sign_out" => "sessions#destroy", :as => 'sign_out'
 
   get "post/remove/:id" => "posts#destroy", :as => 'delete_post'
+  get "posts/category/:category_id" => "posts#index", :as => 'category'
 
   resources :posts
   resource :users
