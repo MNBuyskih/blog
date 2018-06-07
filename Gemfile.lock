@@ -31,6 +31,10 @@ GEM
     arel (3.0.3)
     bcrypt (3.1.12)
     builder (3.0.4)
+    cells (3.11.3)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
+      uber (~> 0.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -107,6 +111,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.54)
+    uber (0.0.15)
     uglifier (4.1.11)
       execjs (>= 0.3.0, < 3)
 
@@ -115,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  cells (~> 3.11.3)
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2 (~> 0.3.10)
