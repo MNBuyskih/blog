@@ -60,17 +60,17 @@
         <h3 class="h6">Leave a reply</h3>
       </header>
 
-      <% if @post.new_comment.errors.any? %>
+      <% if @comment.errors.any? %>
         <div class="alert alert-danger">
           <ul>
-            <% @post.new_comment.errors.full_messages.each do |msg| %>
+            <% @comment.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
       <% end %>
 
-      <%= form_for [@post, @post.new_comment] do |f| %>
+      <%= form_for [@post, @comment] do |f| %>
         <div class="row">
           <div class="form-group col-md-6">
             <%= f.text_field :name, {placeholder: 'Name', class: 'form-control'} %>

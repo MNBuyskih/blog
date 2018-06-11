@@ -19,6 +19,12 @@ class PostsController < ApplicationController
     @post.views += 1
     @post.save(:validate => false)
 
+    @comment = Comment.new({post_id: @post.id})
+    if current_user
+      @comment.name = current_user.name
+      @comment.email = current_user.email
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }

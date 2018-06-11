@@ -19,10 +19,4 @@ class Post < ActiveRecord::Base
     return Post.find_all_by_category_id(params[:category_id]) if params[:category_id]
     Post.all
   end
-
-  def new_comment
-    comment = Comment.new
-    comment.post_id = @id
-    comment
-  end
 end

@@ -54,3 +54,9 @@ section.featured-posts,
     margin: 0;
   }
 }
+
+section.featured-posts {
+  .row:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
+}
