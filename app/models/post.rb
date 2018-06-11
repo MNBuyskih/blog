@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  has_many :comments
 
   attr_accessible :body, :lead, :title, :image, :user_id, :category_id
 
@@ -17,5 +18,11 @@ class Post < ActiveRecord::Base
   def self.filter(params)
     return Post.find_all_by_category_id(params[:category_id]) if params[:category_id]
     Post.all
+  end
+
+  def new_comment
+    comment = Comment.new
+    comment.post_id = @id
+    comment
   end
 end

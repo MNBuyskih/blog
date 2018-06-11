@@ -47,3 +47,10 @@ section.featured-posts,
     }
   }
 }
+
+.post-comments .date {
+  &:before {
+    content: '';
+    margin: 0;
+  }
+}
