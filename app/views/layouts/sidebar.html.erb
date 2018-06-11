@@ -12,13 +12,15 @@
         <header>
           <h3 class="h6">Search the blog</h3>
         </header>
-        <form action="#" class="search-form">
+
+        <%= form_tag posts_path, {method: 'get', class: 'search-form'} do %>
           <div class="form-group">
-            <input type="search" placeholder="What are you looking for?">
-            <button type="submit" class="submit"><i class="icon-search"></i></button>
+            <%= text_field_tag 'search', nil, {placeholder: 'What are you looking for?'} %>
+            <button type="submit" class="submit"><i class="fas fa-search"></i></button>
           </div>
-        </form>
+        <% end %>
       </div>
+
       <!-- Widget [Latest Posts Widget]        -->
       <%= render_cell :latest_posts, :show %>
 
