@@ -47,3 +47,9 @@ section.featured-posts,
     }
   }
 }
+
+.tag {
+  &:before {
+    content: '#'
+  }
+}
