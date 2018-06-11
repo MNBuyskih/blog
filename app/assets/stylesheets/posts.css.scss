@@ -47,3 +47,15 @@ section.featured-posts,
     }
   }
 }
+
+.blog-post .posts-nav a {
+  display: block;
+  .text {
+    overflow: hidden;
+    h6 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

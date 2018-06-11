@@ -13,7 +13,7 @@
       <%= render 'info', :post => @post %>
     </div>
     <div class="post-body">
-      <p class="lead"><%= raw(@post.lead) %></p>
+      <div class="lead"><%= raw(@post.lead) %></div>
 
       <div class="post-content">
         <%= raw(@post.body) %>
@@ -22,18 +22,31 @@
     <div class="post-tags">
       <a href="#" class="tag">#Business</a><a href="#" class="tag">#Tricks</a><a href="#" class="tag">#Financial</a><a href="#" class="tag">#Economy</a>
     </div>
-    <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
-      <a href="#" class="prev-post text-left d-flex align-items-center">
-        <div class="icon prev"><i class="fa fa-angle-left"></i></div>
-        <div class="text"><strong class="text-primary">Previous Post </strong>
-          <h6>I Bought a Wedding Dress.</h6>
-        </div>
-      </a><a href="#" class="next-post text-right d-flex align-items-center justify-content-end">
-      <div class="text"><strong class="text-primary">Next Post </strong>
-        <h6>I Bought a Wedding Dress.</h6>
+
+    <% if @post.next || @post.prev %>
+      <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+        <% if @post.prev %>
+          <%= link_to @post.prev, {class: 'prev-post text-left d-flex align-items-center'} do %>
+            <div class="icon prev"><i class="far fa-hand-point-left"></i></div>
+            <div class="text"><strong class="text-primary">Previous Post </strong>
+              <h6>
+                <%= @post.prev.title %>
+              </h6>
+            </div>
+          <% end %>
+        <% end %>
+        <% if @post.next %>
+          <%= link_to @post.next, {class: 'prev-post text-left d-flex align-items-center'} do %>
+            <div class="text"><strong class="text-primary">Next Post </strong>
+              <h6>
+                <%= @post.next.title %>
+              </h6>
+            </div>
+            <div class="icon next"><i class="far fa-hand-point-right"> </i></div>
+          <% end %>
+        <% end %>
       </div>
-      <div class="icon next"><i class="fa fa-angle-right"> </i></div>
-    </a></div>
+    <% end %>
     <div class="post-comments">
       <header>
         <h3 class="h6">Post Comments<span class="no-of-comments">(3)</span></h3>
