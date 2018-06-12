@@ -15,7 +15,11 @@ class Post < ActiveRecord::Base
   validates :body, :presence => true, :on => :create
 
   def self.filter(params)
-    return Post.find_all_by_category_id(params[:category_id]) if params[:category_id]
-    Post.all
+    page = params.key?(:page) ? params[:page].to_i : 1
+    limit = Rails.configuration.page_length
+    offset = (page - 1) * limit
+
+    return Post.find_all_by_category_id(params[:category_id]).limit(limit).offset(offset) if params[:category_id]
+    Post.limit(limit).offset(offset)
   end
 end
