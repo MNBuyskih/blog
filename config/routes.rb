@@ -5,6 +5,7 @@ Blog::Application.routes.draw do
 
   get "post/remove/:id" => "posts#destroy", :as => 'delete_post'
   get "posts/category/:category_id" => "posts#index", :as => 'category'
+  get "posts/tag/:tag_id" => "posts#index", :as => 'tag'
 
   resources :posts
   resource :users

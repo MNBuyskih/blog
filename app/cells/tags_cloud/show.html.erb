@@ -1,0 +1,12 @@
+<div class="widget tags">
+  <header>
+    <h3 class="h6">Tags</h3>
+  </header>
+  <ul class="list-inline">
+    <% @tags.each do |tag| %>
+      <li class="list-inline-item">
+        <%= link_to tag.tag, tag_path(tag), {class: 'tag'} %>
+      </li>
+    <% end %>
+  </ul>
+</div>
