@@ -15,6 +15,10 @@ class Post < ActiveRecord::Base
   validates :body, :presence => true, :on => :create
 
   def self.filter(params)
+    if params[:search]
+      search = "%#{params[:search]}%"
+      return Post.where('title like ? OR lead like ? OR body like ?', search, search, search)
+    end
     return Post.find_all_by_category_id(params[:category_id]) if params[:category_id]
     Post.all
   end

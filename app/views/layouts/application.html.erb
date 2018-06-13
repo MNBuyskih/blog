@@ -3,10 +3,11 @@
 <head>
   <title>Blog</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" integrity="sha384-EWu6DiBz01XlR6XGsVuabDMbDN6RT8cwNoY+3tIH+6pUCfaNldJYJQfQlbEIWLyA" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2/css/style.default.css" id="theme-stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css">
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2/css/style.default.css">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -43,7 +44,7 @@
       <div id="navbarcollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <% if current_user %>
-            <li class="nav-item"><%= link_to 'New post', {:controller => 'posts', :action => 'new'}, class: 'nav-link'  %></li>
+            <li class="nav-item"><%= link_to 'New post', {:controller => 'posts', :action => 'new'}, class: 'nav-link' %></li>
             <li class="nav-item"><%= link_to 'Sign Out', sign_out_path, class: 'nav-link' %></li>
           <% else %>
             <li class="nav-item"><%= link_to 'Sign In', sign_in_path, class: 'nav-link' %></li>
