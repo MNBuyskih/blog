@@ -1,0 +1,14 @@
+<div class="latest-posts">
+  <% @posts.each do |post| %>
+    <%= link_to post do %>
+      <div class="post d-flex align-items-center">
+        <div class="image">
+          <img src="<%= post.image %>" alt="<%= post.title %>" class="img-fluid">
+        </div>
+        <div class="title">
+          <strong><%= post.title %></strong>
+          <span class="date last-meta"><%= time_tag post.created_at %></span></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
