@@ -1,12 +1,14 @@
-<section style="" class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
-        <h1>Mixbook<br>Developers Blog</h1>
+<% if current_page == 1 %>
+  <section style="" class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1>Mixbook<br>Developers Blog</h1>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+<% end %>
 
 <section class="featured-posts">
   <div class="container">
@@ -18,4 +20,21 @@
       <h3>Nobody has written here yet. <%= link_to 'Be first!', new_post_path %></h3>
     <% end %>
   </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-template d-flex justify-content-center">
+      <% if prev_page > 0 %>
+        <li class="page-item">
+          <%= link_to posts_path(:page => prev_page), {class: 'page-link'} do %>
+            <i class="fas fa-angle-left"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <li class="page-item">
+        <%= link_to posts_path(:page => next_page), {class: 'page-link'} do %>
+          <i class="fas fa-angle-right"></i>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
 </section>
