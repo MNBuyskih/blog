@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.filter(params)
 
     respond_to do |format|
       format.html { render layout: 'application' } # index.html.erb
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post.views += 1
-    @post.save
+    @post.save(:validate => false)
 
     respond_to do |format|
       format.html # show.html.erb
