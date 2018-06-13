@@ -6,7 +6,9 @@ Blog::Application.routes.draw do
   get "post/remove/:id" => "posts#destroy", :as => 'delete_post'
   get "posts/category/:category_id" => "posts#index", :as => 'category'
 
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   resource :users
   resource :sessions
 
