@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Category.create([
-                    {title: 'Business'},
-                    {title: 'Everest'},
-                    {title: 'Grows'},
-                    {title: 'Landshark'},
-                    {title: 'Jakku'}
+                  { title: 'Business' },
+                  { title: 'Everest' },
+                  { title: 'Grows' },
+                  { title: 'Landshark' },
+                  { title: 'Jakku' }
                 ])
