@@ -15,15 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
-    @post.views += 1
-    @post.save(:validate => false)
-
-    @comment = Comment.new({post_id: @post.id})
-    if current_user
-      @comment.name = current_user.name
-      @comment.email = current_user.email
-    end
+    @post = Post.find_for_show(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +50,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post }
         format.json { render json: @post, status: :created, location: @post }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -74,7 +66,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end

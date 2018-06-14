@@ -1,10 +1,10 @@
 Blog::Application.routes.draw do
-  get "sign_up" => "users#new", :as => 'sign_up'
-  get "sign_in" => "sessions#new", :as => 'sign_in'
-  get "sign_out" => "sessions#destroy", :as => 'sign_out'
+  get 'sign_up' => 'users#new', :as => 'sign_up'
+  get 'sign_in' => 'sessions#new', :as => 'sign_in'
+  get 'sign_out' => 'sessions#destroy', :as => 'sign_out'
 
-  get "post/remove/:id" => "posts#destroy", :as => 'delete_post'
-  get "posts/category/:category_id" => "posts#index", :as => 'category'
+  get 'post/remove/:id' => 'posts#destroy', :as => 'delete_post'
+  get 'posts/category/:category_id' => 'posts#index', :as => 'category'
 
   resources :posts do
     resources :comments, only: [:create]
@@ -12,7 +12,7 @@ Blog::Application.routes.draw do
   resource :users
   resource :sessions
 
-  root :to => 'posts#index'
+  root to: 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
