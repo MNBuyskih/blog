@@ -1,0 +1,19 @@
+<a href="#" class="author d-flex align-items-center flex-wrap">
+  <div class="avatar">
+    <img src="https://d19m59y37dris4.cloudfront.net/blog/1-2/img/avatar-1.jpg" alt="..." class="img-fluid">
+  </div>
+  <div class="title"><span><%= post.user.name %></span></div>
+</a>
+<div class="date"><i class="far fa-clock"></i> <%= time_ago_in_words(post.created_at) %></div>
+<div class="views"><i class="far fa-eye"></i> <%= post.views %></div>
+<div class="comments"><i class="far fa-comments"></i> 12</div>
+<% if current_user && current_user.id == post.user.id %>
+  <div class="edit">
+    <i class="far fa-edit"></i>
+    <%= link_to('Edit', edit_post_path(post)) %>
+  </div>
+  <div class="delete">
+    <i class="far fa-times-circle"></i>
+    <%= link_to 'Delete', delete_post_path(post), :confirm => "Are you sure?" %>
+  </div>
+<% end %>

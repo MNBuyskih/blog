@@ -1,0 +1,49 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+section.featured-posts .image {
+  max-height: none;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 991px) {
+    min-height: 200px !important;
+    width: 100%;
+  }
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+section.featured-posts,
+.post {
+  .title {
+    &:after {
+      display: none;
+    }
+  }
+
+  .date,
+  .edit,
+  .delete,
+  .views,
+  .comments {
+    font-size: 12.8px;
+    font-weight: 400;
+    color: #999;
+
+    &:after {
+      display: none;
+    }
+    &:before {
+      content: '|';
+      display: inline-block;
+      margin: 0 7px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  }
+}

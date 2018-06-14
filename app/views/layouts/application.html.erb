@@ -2,11 +2,58 @@
 <html>
 <head>
   <title>Blog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" integrity="sha384-EWu6DiBz01XlR6XGsVuabDMbDN6RT8cwNoY+3tIH+6pUCfaNldJYJQfQlbEIWLyA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/blog/1-2/css/style.default.css" id="theme-stylesheet">
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<header class="header">
+  <!-- Main Navbar-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="search-area">
+      <div class="search-area-inner d-flex align-items-center justify-content-center">
+        <div class="close-btn"><i class="icon-close"></i></div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+            <form action="#">
+              <div class="form-group">
+                <input type="search" name="search" id="search" placeholder="What are you looking for?">
+                <button type="submit" class="submit"><i class="icon-search-1"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Navbar Brand -->
+      <div class="navbar-header d-flex align-items-center justify-content-between">
+        <!-- Navbar Brand --><a href="/" class="navbar-brand">Mixbook Blog</a>
+        <!-- Toggle Button-->
+        <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+          <span></span><span></span><span></span></button>
+      </div>
+      <!-- Navbar Menu -->
+      <div id="navbarcollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <% if current_user %>
+            <li class="nav-item"><%= link_to 'New post', {:controller => 'posts', :action => 'new'}, class: 'nav-link'  %></li>
+            <li class="nav-item"><%= link_to 'Sign Out', sign_out_path, class: 'nav-link' %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to 'Sign In', sign_in_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Sign Up', sign_up_path, class: 'nav-link' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <%= yield %>
 

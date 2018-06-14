@@ -1,0 +1,25 @@
+<div class="form">
+  <h1>Sign In</h1>
+
+  <%= form_tag sessions_path do %>
+    <div class="form-group row">
+      <%= label_tag :email, nil, {class: 'col-sm-4 col-form-label'} %>
+      <div class="col-sm-8">
+        <%= text_field_tag :email, nil, {type: 'email', class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= label_tag :password, nil, {class: 'col-sm-4 col-form-label'} %>
+      <div class="col-sm-8">
+        <%= password_field_tag :password, nil, {class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-12 text-right">
+        <%= submit_tag 'Log In', class: 'btn btn-primary mb-2' %>
+      </div>
+    </div>
+  <% end %>
+</div>
