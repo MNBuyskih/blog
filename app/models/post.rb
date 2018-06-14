@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def tags_list
-    self.tags.map { |t| t.tag }.join(' ')
+    tags.map(&:tag).join(' ')
   end
 
   def tags_list=(tags)
@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
       unless tag
         tag = Tag.new
         tag.tag = t
-        tag.save(:validation => false)
+        tag.save(validation: false)
       end
       tag
     end
