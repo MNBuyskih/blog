@@ -10,7 +10,7 @@ gem 'mysql2', '~> 0.3.10'
 gem 'bcrypt'
 gem 'tinymce-rails'
 
-gem "cells", '~> 3.11.3'
+gem 'cells', '~> 3.11.3'
 
 gem 'rubocop', require: false
 

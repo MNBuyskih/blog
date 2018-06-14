@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post.views += 1
-    @post.save(:validate => false)
+    @post.save(validate: false)
 
     respond_to do |format|
       format.html # show.html.erb
