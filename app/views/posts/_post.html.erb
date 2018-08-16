@@ -3,7 +3,7 @@
     <div class="text-inner d-flex align-items-center">
       <div class="content">
         <header class="post-header">
-          <div class="category"><a href="#"><%= post.category.title %></a></div>
+          <div class="category"><%= link_to post.category.title, category_path(post.category_id) %></div>
           <h2 class="h4"><%= link_to post.title, post_path(post) %></h2>
         </header>
         <p><%= raw(post.lead) %></p>

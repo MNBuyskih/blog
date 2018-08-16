@@ -13,5 +13,9 @@
     <% @posts.each do |post| %>
       <%= render 'post', {post: post} %>
     <% end %>
+
+    <% if @posts.length.zero? %>
+      <h3>Nobody has written here yet. <%= link_to 'Be first!', new_post_path %></h3>
+    <% end %>
   </div>
 </section>

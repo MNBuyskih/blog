@@ -13,4 +13,9 @@ class Post < ActiveRecord::Base
   validates :user, associated: true
   validates :lead, presence: true, on: :create
   validates :body, presence: true, on: :create
+
+  def self.filter(params)
+    return Post.find_all_by_category_id(params[:category_id]) if params[:category_id]
+    Post.all
+  end
 end
